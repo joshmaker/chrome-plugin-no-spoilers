@@ -1,0 +1,22 @@
+{
+  "manifest_version": 2,
+
+  "name": "No Breaking Bad Spoilers",
+  "description": "Remove Spoilers",
+  "version": "1.0",
+
+  "browser_action": {
+    "default_icon": "icon.png"
+  },
+ "permissions": [
+     "tabs", "*://*/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "js": ["jquery.min.js", "redact.js"],
+      "css": ["redact.css"],
+      "run_at": "document_end"
+    }
+  ]
+}
